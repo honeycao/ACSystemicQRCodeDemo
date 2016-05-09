@@ -28,7 +28,7 @@ _QRImg.image = [HCCreateQRCode createQRCodeWithString:_input.text ViewController
 `FirstViewController` 和 `ShowQRCodeViewController` 分别是扫码和获取二维码
 
 ##Q-A
-等候测试
+当前的一个问题就是突然发现代码好大，研究半天发现是那个gif图超大，没搞懂，会尽快解决，下载的同学别吓到了。
 
 ##备注
 >I am a rookie ，I am not God （有建议或想法请q：331864805 ，你的点赞是我最大的动力）
