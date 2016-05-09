@@ -27,6 +27,10 @@ _QRImg.image = [HCCreateQRCode createQRCodeWithString:_input.text ViewController
 ##Demo使用
 `FirstViewController` 和 `ShowQRCodeViewController` 分别是扫码和获取二维码
 
+##后期完善
+* 可能需要研究一下如何正确跳转到任何页面，针对扫码信息来做更详细的跳转
+* 接口上的调用和信息回调完善
+
 ##Q-A
 当前的一个问题就是突然发现代码好大，研究半天发现是那个gif图超大，没搞懂，会尽快解决，下载的同学别吓到了。
 
