@@ -3,11 +3,17 @@
 
 ##导航
 1、[功能](https://github.com/honeycao/HCSystemicQRCodeDemo#功能)
+
 2、[使用方法](https://github.com/honeycao/HCSystemicQRCodeDemo#使用方法)
+
 3、[Demo使用](https://github.com/honeycao/HCSystemicQRCodeDemo#Demo使用)
+
 4、[后期完善](https://github.com/honeycao/HCSystemicQRCodeDemo#后期完善)
+
 5、[Q-A](https://github.com/honeycao/HCSystemicQRCodeDemo#Q-A)
+
 6、[备注](https://github.com/honeycao/HCSystemicQRCodeDemo#备注)
+
 
 ##功能
 * 打开摄像头扫码或通过相册扫码
