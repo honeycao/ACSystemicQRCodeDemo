@@ -14,6 +14,7 @@
 
 6、[备注](https://github.com/honeycao/HCSystemicQRCodeDemo#备注)
 
+-------
 
 ##功能
 * 打开摄像头扫码或通过相册扫码
