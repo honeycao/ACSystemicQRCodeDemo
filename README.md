@@ -1,6 +1,9 @@
 # HCSystemicQRCodeDemo
 利用系统源生方法来扫描二维码/条形码、生成二维码，并封装开灯、震动、提示声音和从相册读取等功能
 
+##导航
+1、[后期完善](https://github.com/honeycao/HCSystemicQRCodeDemo#后期完善)
+
 ##功能
 * 打开摄像头扫码或通过相册扫码
 * 生成二维码
