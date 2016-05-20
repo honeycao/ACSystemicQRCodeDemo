@@ -8,7 +8,7 @@
 
 3、[Demo使用](https://github.com/honeycao/HCSystemicQRCodeDemo#Demo使用)
 
-4、[后期完善](https://github.com/honeycao/HCSystemicQRCodeDemo#后期完善)
+4、[后期改进](https://github.com/honeycao/HCSystemicQRCodeDemo#后期改进)
 
 5、[Q-A](https://github.com/honeycao/HCSystemicQRCodeDemo#Q-A)
 
@@ -29,6 +29,7 @@
 ```obj-c
 //扫码接口
 HCScanQRViewController *scan = [[HCScanQRViewController alloc]init];
+scan.showQRCodeInfo = YES;
 //调用此方法来返回二维码信息
 [scan successfulGetQRCodeInfo:^(NSString *QRCodeInfo) {
     //QRCodeInfo是返回的二维码信息
@@ -42,7 +43,11 @@ _QRImg.image = [HCCreateQRCode createQRCodeWithString:_input.text ViewController
 ##Demo使用
 `FirstViewController` 和 `ShowQRCodeViewController` 分别是扫码和获取二维码
 
-##后期完善
+##后期改进
+`2016、5、20`
+* 错误：在调用的时候如果不需要回传的二维码信息，运行会出错
+####更新之后，添加一个Bool值，来确定是否需要获得扫码得到的二维码信息
+
 * 可能需要研究一下如何正确跳转到任何页面，针对扫码信息来做更详细的跳转
 * 接口上的调用和信息回调完善
 
