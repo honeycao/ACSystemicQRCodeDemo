@@ -47,6 +47,7 @@
         case 0:
         {
             HCScanQRViewController *scan = [[HCScanQRViewController alloc]init];
+            scan.showQRCodeInfo = YES;
             //调用此方法来获取二维码信息
             [scan successfulGetQRCodeInfo:^(NSString *QRCodeInfo) {
                 NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];

@@ -288,7 +288,10 @@
     for (CIQRCodeFeature *result in feature) {
         NSString *urlStr = result.messageString;
         //二维码信息回传
-        self.block(urlStr);
+        if (_showQRCodeInfo) {
+            self.block(urlStr);
+        }
+        
         [SystemFunctions showInSafariWithURLMessage:urlStr Success:^(NSString *token) {
             
         } Failure:^(NSError *error) {
@@ -318,7 +321,10 @@
         AVMetadataMachineReadableCodeObject *obj = [metadataObjects lastObject];
         if (obj) {
             //二维码信息回传
-            self.block([obj stringValue]);
+            if (_showQRCodeInfo) {
+                self.block([obj stringValue]);
+            }
+            
             [SystemFunctions showInSafariWithURLMessage:[obj stringValue] Success:^(NSString *token) {
                 
             } Failure:^(NSError *error) {
