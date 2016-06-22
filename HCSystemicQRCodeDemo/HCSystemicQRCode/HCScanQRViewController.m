@@ -273,9 +273,7 @@
     // 1.取出选中的图片
     UIImage *pickImage = info[UIImagePickerControllerOriginalImage];
     
-    NSData *imageData = UIImagePNGRepresentation(pickImage);
-    
-    CIImage *ciImage = [CIImage imageWithData:imageData];
+    CIImage *ciImage = [CIImage imageWithCGImage:pickImage.CGImage];
     
     //2.从选中的图片中读取二维码数据
     //2.1创建一个探测器
@@ -312,10 +310,10 @@
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
     if (metadataObjects.count > 0) {
         [SystemFunctions openShake:YES Sound:YES];
-        // 1.停止扫描
-        //        [self.session stopRunning];
-        // 2.停止冲击波
-        //        [self.link removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+//        // 1.停止扫描
+//                [self.session stopRunning];
+//        // 2.停止冲击波
+//                [self.link removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
         
         // 3.取出扫描到得数据
         AVMetadataMachineReadableCodeObject *obj = [metadataObjects lastObject];
@@ -328,6 +326,8 @@
             [SystemFunctions showInSafariWithURLMessage:[obj stringValue] Success:^(NSString *token) {
                 
             } Failure:^(NSError *error) {
+                [self.session stopRunning];
+                [self.link removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
                 [self showAlertWithTitle:@"该信息无法跳转，详细信息为：" Message:[obj stringValue] OptionalAction:@[@"确定"]];
             }];
         }
@@ -338,7 +338,10 @@
 - (void)showAlertWithTitle:(NSString *)title Message:(NSString *)message OptionalAction:(NSArray *)actions {
     
     UIAlertController *alertCtrl = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    [alertCtrl addAction:[UIAlertAction actionWithTitle:actions.firstObject style:UIAlertActionStyleCancel handler:nil]];
+    [alertCtrl addAction:[UIAlertAction actionWithTitle:actions.firstObject style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [self.session startRunning];
+        [self.link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    }]];
     [self presentViewController:alertCtrl animated:YES completion:nil];
 }
 
