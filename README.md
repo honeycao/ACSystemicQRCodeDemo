@@ -1,5 +1,6 @@
 # HCSystemicQRCodeDemo
-利用系统源生方法来扫描二维码/条形码、生成二维码，并封装开灯、震动、提示声音和从相册读取等功能
+####利用系统源生方法来扫描二维码/条形码、生成二维码，并封装开灯、震动、提示声音和从相册读取等功能
+
 ![image](https://github.com/honeycao/HCSystemicQRCodeDemo/blob/master/HCSystemicQRCodeDemo.gif) 
 
 ##导航
@@ -45,6 +46,9 @@ _QRImg.image = [HCCreateQRCode createQRCodeWithString:_input.text ViewController
 `FirstViewController` 和 `ShowQRCodeViewController` 分别是扫码和获取二维码
 
 ##后期改进
+`2016、6、22`
+* 修改弹出提示框时一直响的问题，顺便添加几个可支持跳转的app，如qq、微信、微博等
+
 `2016、5、20`
 * 错误：在调用的时候如果不需要回传的二维码信息，运行会出错
 ####更新之后，添加一个Bool值，来确定是否需要获得扫码得到的二维码信息
