@@ -105,7 +105,6 @@
 		2F0CDBDA1CD9FBA200E0FDCC = {
 			isa = PBXGroup;
 			children = (
-				2F0CDC191CD9FD8B00E0FDCC /* HCSystemicQRCode */,
 				2F0CDBE51CD9FBA300E0FDCC /* HCSystemicQRCodeDemo */,
 				2F0CDBFF1CD9FBA300E0FDCC /* HCSystemicQRCodeDemoTests */,
 				2F0CDC0A1CD9FBA300E0FDCC /* HCSystemicQRCodeDemoUITests */,
@@ -126,6 +125,7 @@
 		2F0CDBE51CD9FBA300E0FDCC /* HCSystemicQRCodeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2F0CDC191CD9FD8B00E0FDCC /* HCSystemicQRCode */,
 				2F0CDBE91CD9FBA300E0FDCC /* AppDelegate.h */,
 				2F0CDBEA1CD9FBA300E0FDCC /* AppDelegate.m */,
 				2F0CDBEC1CD9FBA300E0FDCC /* ViewController.h */,
@@ -181,8 +181,7 @@
 				2F7ADE051CDB6EBB004A632F /* HCCreateQRCode.h */,
 				2F7ADE061CDB6EBB004A632F /* HCCreateQRCode.m */,
 			);
-			name = HCSystemicQRCode;
-			path = HCSystemicQRCodeDemo/HCSystemicQRCode;
+			path = HCSystemicQRCode;
 			sourceTree = "<group>";
 		};
 		2F0CDC351CDA283800E0FDCC /* model */ = {
@@ -272,6 +271,7 @@
 				TargetAttributes = {
 					2F0CDBE21CD9FBA200E0FDCC = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = KV856G9KZB;
 					};
 					2F0CDBFB1CD9FBA300E0FDCC = {
 						CreatedOnToolsVersion = 7.3;
@@ -487,10 +487,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = KV856G9KZB;
 				INFOPLIST_FILE = HCSystemicQRCodeDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = honeycao.HCSystemicQRCodeDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = honeycao.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -500,10 +501,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = KV856G9KZB;
 				INFOPLIST_FILE = HCSystemicQRCodeDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = honeycao.HCSystemicQRCodeDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = honeycao.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

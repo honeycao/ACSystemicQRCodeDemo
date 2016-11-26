@@ -1,12 +1,13 @@
 //
 //  HCCreateQRCode.m
-//  HCSystemicQRCodeDemo
 //
 //  Created by Caoyq on 16/5/5.
 //  Copyright © 2016年 honeycao. All rights reserved.
 //
 
 #import "HCCreateQRCode.h"
+
+static CGFloat kImageSize = 200;  //得到的二维码图片大小
 
 @implementation HCCreateQRCode
 
@@ -31,7 +32,7 @@
     //将CIImage转换成UIImage,并放大显示
     UIImage *image = [UIImage new];
     HCCreateQRCode *hcCode = [HCCreateQRCode new];
-    image = [hcCode createNonInterpolatedUIImageFormCIImage:outputImage withSize:200];
+    image = [hcCode createNonInterpolatedUIImageFormCIImage:outputImage withSize:kImageSize];
     return image;
 }
 

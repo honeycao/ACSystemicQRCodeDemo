@@ -58,6 +58,15 @@
 @implementation HCScanQRViewController
 
 #pragma mark - ---Life Cycle---
+
+- (instancetype)initWithSuccessBlock: (void(^)(NSString *QRCodeInfo))success {
+    self = [super init];
+    if (self) {
+        block = success;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -215,6 +224,14 @@
     self.navigationItem.rightBarButtonItem = rightBtn;
 }
 
+- (void)setNavigationTitle:(NSString *)navigationTitle {
+    self.navigationItem.title = navigationTitle;
+}
+
+- (void)setHideAlbum:(BOOL)hideAlbum {
+    self.navigationItem.rightBarButtonItem.customView.hidden = hideAlbum;
+}
+
 #pragma mark - 线条运动的动画
 - (void)LineAnimation {
     if (_up == YES) {
@@ -286,8 +303,8 @@
     for (CIQRCodeFeature *result in feature) {
         NSString *urlStr = result.messageString;
         //二维码信息回传
-        if (_showQRCodeInfo) {
-            self.block(urlStr);
+        if (block) {
+            block(urlStr);
         }
         
         [SystemFunctions showInSafariWithURLMessage:urlStr Success:^(NSString *token) {
@@ -319,8 +336,8 @@
         AVMetadataMachineReadableCodeObject *obj = [metadataObjects lastObject];
         if (obj) {
             //二维码信息回传
-            if (_showQRCodeInfo) {
-                self.block([obj stringValue]);
+            if (block) {
+                block([obj stringValue]);
             }
             
             [SystemFunctions showInSafariWithURLMessage:[obj stringValue] Success:^(NSString *token) {
@@ -347,7 +364,8 @@
 
 #pragma mark - 二维码块传值
 - (void)successfulGetQRCodeInfo:(successBlock)success {
-    self.block =success;
+    
+    block = success;
 }
 
 @end

@@ -46,10 +46,15 @@
     switch (indexPath.row) {
         case 0:
         {
-            HCScanQRViewController *scan = [[HCScanQRViewController alloc]init];
-            scan.showQRCodeInfo = YES;
-            //调用此方法来获取二维码信息
-            [scan successfulGetQRCodeInfo:^(NSString *QRCodeInfo) {
+//            HCScanQRViewController *scan = [[HCScanQRViewController alloc]init];
+//            //调用此方法来获取二维码信息
+//            [scan successfulGetQRCodeInfo:^(NSString *QRCodeInfo) {
+//                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//                UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+//                cell.detailTextLabel.text = QRCodeInfo;
+//            }];
+            //或下面方法
+            HCScanQRViewController *scan = [[HCScanQRViewController alloc] initWithSuccessBlock:^(NSString *QRCodeInfo) {
                 NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
                 UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
                 cell.detailTextLabel.text = QRCodeInfo;

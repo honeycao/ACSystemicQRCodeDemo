@@ -14,7 +14,7 @@
 #import "SystemFunctions.h"
 
 #define kBgImgX             45*ratio
-#define kBgImgY             (64+60)*ratio
+#define kBgImgY             (64+70)*ratio
 #define kBgImgWidth         230*ratio
 
 #define kScrollLineHeight   20*ratio
@@ -24,7 +24,7 @@
 
 #define kLampX              ([[UIScreen mainScreen] bounds].size.width-kLampWidth)/2
 #define kLampY              ([[UIScreen mainScreen] bounds].size.height-kLampWidth-30*ratio)
-#define kLampWidth          64*ratio
+#define kLampWidth          60*ratio
 
 #define kBgAlpha            0.6
 
