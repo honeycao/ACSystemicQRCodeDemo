@@ -32,14 +32,14 @@
 * 接口调用
 ```obj-c
 //扫码接口
-//初始化和或许扫码信息方法一：
+//初始化和扫码信息 方法一：
 HCScanQRViewController *scan = [[HCScanQRViewController alloc]init];
 //调用此方法来返回二维码信息
 [scan successfulGetQRCodeInfo:^(NSString *QRCodeInfo) {
     //QRCodeInfo是返回的二维码信息
 }];
 
-//初始化和或许扫码信息方法二：
+//初始化和扫码信息 方法二：
 HCScanQRViewController *scan = [[HCScanQRViewController alloc] initWithSuccessBlock:^(NSString *QRCodeInfo) {
     NSLog(@"扫码信息:%@",QRCodeInfo);
 }];
