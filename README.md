@@ -4,6 +4,8 @@
 ![image](https://github.com/honeycao/HCSystemicQRCodeDemo/blob/master/HCSystemicQRCodeDemo.gif) 
 
 ##导航
+>支持 iOS8.0+，Xcode7.0+
+
 1、[功能](https://github.com/honeycao/HCSystemicQRCodeDemo#功能)
 
 2、[使用方法](https://github.com/honeycao/HCSystemicQRCodeDemo#使用方法)
@@ -30,12 +32,18 @@
 * 接口调用
 ```obj-c
 //扫码接口
+//初始化和或许扫码信息方法一：
 HCScanQRViewController *scan = [[HCScanQRViewController alloc]init];
-scan.showQRCodeInfo = YES;
 //调用此方法来返回二维码信息
 [scan successfulGetQRCodeInfo:^(NSString *QRCodeInfo) {
     //QRCodeInfo是返回的二维码信息
 }];
+
+//初始化和或许扫码信息方法二：
+HCScanQRViewController *scan = [[HCScanQRViewController alloc] initWithSuccessBlock:^(NSString *QRCodeInfo) {
+    NSLog(@"扫码信息:%@",QRCodeInfo);
+}];
+
 [self.navigationController pushViewController:scan animated:YES];
 
 //生成二维码接口,返回的是一个UIImage
@@ -46,6 +54,9 @@ _QRImg.image = [HCCreateQRCode createQRCodeWithString:_input.text ViewController
 `FirstViewController` 和 `ShowQRCodeViewController` 分别是扫码和获取二维码
 
 ##后期改进
+`2016、11、26`
+* 简单修改接口以及优化部分代码。
+
 `2016、6、22`
 * 修改弹出提示框时一直响的问题，顺便添加几个可支持跳转的app，如qq、微信、微博等
 
